@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.6.2" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd  http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfSimpleForumPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>Lightweight embedded forum plugin.</summary>
+ <description>A simple embedded forum for Symfony applications.</description>
+ <lead>
+  <name>Francois Zaninotto</name>
+  <user>fzaninotto</user>
+  <email>francois.zaninotto@symfony-project.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-09-23</date>
+ <time>12:00:51</time>
+ <version>
+  <release>0.6.7</release>
+  <api>0.6.7</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.symfony-project.com/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="97a3351304b12d6b580831bf76bd1ba3" name="config/schema.yml" role="data"/>
+   <file md5sum="b944241d00f77740f78d1374d9380b2d" name="data/fixtures/fixtures.yml" role="data"/>
+   <file md5sum="52fce10e0b48f01840fe5894b85a992c" name="lib/helper/PaginationHelper.php" role="data"/>
+   <file md5sum="bfde80f54ce0aa81afad5e384540d3aa" name="lib/helper/sfSimpleForumHelper.php" role="data"/>
+   <file md5sum="5f5153f48772b823775b6a7278840b89" name="lib/model/plugin/PluginsfSimpleForumCategory.php" role="data"/>
+   <file md5sum="e55518510f8cef4e6841ade5edb480a0" name="lib/model/plugin/PluginsfSimpleForumCategoryPeer.php" role="data"/>
+   <file md5sum="c94f789d1d610dead9d05bf599a51445" name="lib/model/plugin/PluginsfSimpleForumForum.php" role="data"/>
+   <file md5sum="b21d23e51b0b433185142855cd5550cc" name="lib/model/plugin/PluginsfSimpleForumForumPeer.php" role="data"/>
+   <file md5sum="46ed142b383576de5788ac31e1e999ac" name="lib/model/plugin/PluginsfSimpleForumPost.php" role="data"/>
+   <file md5sum="19dfd395d9588e640d8a2c55d6593a78" name="lib/model/plugin/PluginsfSimpleForumPostPeer.php" role="data"/>
+   <file md5sum="ce387c2b67ee2e5fee9fa3c0553110b1" name="lib/model/plugin/PluginsfSimpleForumTopic.php" role="data"/>
+   <file md5sum="5aa4bfe03b602a78865f2067bb18a2b8" name="lib/model/plugin/PluginsfSimpleForumTopicPeer.php" role="data"/>
+   <file md5sum="76190e3b8964226ae59a8c73d8278f9e" name="lib/model/plugin/PluginsfSimpleForumTopicView.php" role="data"/>
+   <file md5sum="da646811bc6c0307555b6c2cfd01a077" name="lib/model/plugin/PluginsfSimpleForumTopicViewPeer.php" role="data"/>
+   <file md5sum="b39e71cf555a4e26dc85533d24432435" name="lib/model/sfSimpleForumCategory.php" role="data"/>
+   <file md5sum="d247e9bd23a6f74921a74c5a026cbd8f" name="lib/model/sfSimpleForumCategoryPeer.php" role="data"/>
+   <file md5sum="258b4a8d48c0391295c6dc39476ef369" name="lib/model/sfSimpleForumForum.php" role="data"/>
+   <file md5sum="87df15e1b4cce7dddeb39f8b11b4646c" name="lib/model/sfSimpleForumForumPeer.php" role="data"/>
+   <file md5sum="8d0f331ecfc59e20c34775f93961abab" name="lib/model/sfSimpleForumPost.php" role="data"/>
+   <file md5sum="c91ab19afaed7e49f908acb40450be08" name="lib/model/sfSimpleForumPostPeer.php" role="data"/>
+   <file md5sum="855af95552a8b3b04af29359e318e6e2" name="lib/model/sfSimpleForumTopic.php" role="data"/>
+   <file md5sum="f8c91cdd0ac84d514d50cad57d1955e3" name="lib/model/sfSimpleForumTopicPeer.php" role="data"/>
+   <file md5sum="0dcd7e4629c8a4144a0aa6b7ee37923d" name="lib/model/sfSimpleForumTopicView.php" role="data"/>
+   <file md5sum="07becc9b6f6cd2294b02569c5bbb32cb" name="lib/model/sfSimpleForumTopicViewPeer.php" role="data"/>
+   <file md5sum="5e40566b3aab887a638c4d0883791cbe" name="lib/sfSimpleForumTools.class.php" role="data"/>
+   <file md5sum="928ed2c9517387a24519dbda7a3b934e" name="modules/sfSimpleForum/actions/actions.class.php" role="data"/>
+   <file md5sum="f12ed83eb22aef13d1386534679b64f7" name="modules/sfSimpleForum/actions/components.class.php" role="data"/>
+   <file md5sum="55ad5434e3dbe540a06affc461d270cf" name="modules/sfSimpleForum/config/cache.yml" role="data"/>
+   <file md5sum="a979334093a22533fc8bc0401cde77a4" name="modules/sfSimpleForum/config/security.yml" role="data"/>
+   <file md5sum="ea8791c1247e9573ae9d8ca44947958a" name="modules/sfSimpleForum/config/view.yml" role="data"/>
+   <file md5sum="f06c2a1327328147da15b36e9c5b08c9" name="modules/sfSimpleForum/i18n/sfSimpleForum.de.xml" role="data"/>
+   <file md5sum="846625858b569dc7c5b263e3c468a5a1" name="modules/sfSimpleForum/i18n/sfSimpleForum.es.xml" role="data"/>
+   <file md5sum="c7d86d1a3e5dc11819507adedafe07de" name="modules/sfSimpleForum/lib/BasesfSimpleForumActions.class.php" role="data"/>
+   <file md5sum="7375c680f3d5260917ba88c4207580e9" name="modules/sfSimpleForum/lib/BasesfSimpleForumComponents.class.php" role="data"/>
+   <file md5sum="5bacb69d27b0abe4f2aa5b5455fefc79" name="modules/sfSimpleForum/templates/_add_post_form.php" role="data"/>
+   <file md5sum="b3c29df5569eb653e7ed25a83d815057" name="modules/sfSimpleForum/templates/_author.php" role="data"/>
+   <file md5sum="23ce4c9ba3da04019c594de9026778ad" name="modules/sfSimpleForum/templates/_author_name.php" role="data"/>
+   <file md5sum="7accc2db8fef9daa95cf240982cdac46" name="modules/sfSimpleForum/templates/_figures.php" role="data"/>
+   <file md5sum="2a3846a5389c56ad0e61cca53043aa7c" name="modules/sfSimpleForum/templates/_forum.php" role="data"/>
+   <file md5sum="379751aa9e01502c016e34e53ea902c6" name="modules/sfSimpleForum/templates/_latestPosts.php" role="data"/>
+   <file md5sum="4a25808e29450ca5fd01c031a18cd38b" name="modules/sfSimpleForum/templates/_post.php" role="data"/>
+   <file md5sum="784793c9b228673a01585489511dea7b" name="modules/sfSimpleForum/templates/_post_list.php" role="data"/>
+   <file md5sum="d714a96b0f60679b5f19d083c6e742c2" name="modules/sfSimpleForum/templates/_post_moderator_actions.php" role="data"/>
+   <file md5sum="0c055c74da62db9cd220d220ad23a3f6" name="modules/sfSimpleForum/templates/_topic.php" role="data"/>
+   <file md5sum="9be408840ea4952580561bb204fc76aa" name="modules/sfSimpleForum/templates/_topic_list.php" role="data"/>
+   <file md5sum="1abf8b3c33889d22437f1e7e1eeac0a4" name="modules/sfSimpleForum/templates/_topic_moderator_actions.php" role="data"/>
+   <file md5sum="88cfd63cbb3674b6f32489394d3960ed" name="modules/sfSimpleForum/templates/createTopicSuccess.php" role="data"/>
+   <file md5sum="c819a2a00874168045c72077685d4219" name="modules/sfSimpleForum/templates/forumLatestPostsSuccess.php" role="data"/>
+   <file md5sum="8d9a103a059442d5f2fcdeede42b256a" name="modules/sfSimpleForum/templates/forumListSuccess.php" role="data"/>
+   <file md5sum="34963412f4333d2dd856df53eea41ff2" name="modules/sfSimpleForum/templates/forumSuccess.php" role="data"/>
+   <file md5sum="b2fc37a5a0cbe1a2b4127d4bafe523d0" name="modules/sfSimpleForum/templates/latestPostsSuccess.php" role="data"/>
+   <file md5sum="60ed464e0bf67bc0ffc24b0c3c15e7a4" name="modules/sfSimpleForum/templates/latestTopicsSuccess.php" role="data"/>
+   <file md5sum="1321bc081311e520729d3b2386e0e54b" name="modules/sfSimpleForum/templates/topicSuccess.php" role="data"/>
+   <file md5sum="781c900a510150a6e3a2ca4bfda35ffc" name="modules/sfSimpleForum/templates/userLatestPostsSuccess.php" role="data"/>
+   <file md5sum="40a0c5d95937c04c14c8448dccf721b4" name="modules/sfSimpleForum/templates/userLatestTopicsSuccess.php" role="data"/>
+   <file md5sum="00662b00e89855841f2265df02d53569" name="modules/sfSimpleForum/validate/addPost.yml" role="data"/>
+   <file md5sum="ffecab73b9781dd9dcc05e5fcd30c1a9" name="modules/sfSimpleForum/validate/addTopic.yml" role="data"/>
+   <file md5sum="914bc8a8458d3e9a0a54e22fc5691473" name="modules/sfSimpleForumCategoryAdmin/actions/actions.class.php" role="data"/>
+   <file md5sum="a14ddcb412abebcd5c6759966ccdebcd" name="modules/sfSimpleForumCategoryAdmin/config/generator.yml" role="data"/>
+   <file md5sum="244eed894a381fb542033571ac570d45" name="modules/sfSimpleForumCategoryAdmin/config/view.yml" role="data"/>
+   <file md5sum="2ea748dde88adf55b99fa6b13066e072" name="modules/sfSimpleForumCategoryAdmin/templates/_forums.php" role="data"/>
+   <file md5sum="c0b942d777ba1dab603b7b39fc387d9f" name="modules/sfSimpleForumForumAdmin/actions/actions.class.php" role="data"/>
+   <file md5sum="1c98cbcb8323ff5ae078ea585694f2d9" name="modules/sfSimpleForumForumAdmin/config/generator.yml" role="data"/>
+   <file md5sum="0b15b00a30c74ea318491f422d79602a" name="modules/sfSimpleForumForumAdmin/config/view.yml" role="data"/>
+   <file md5sum="0f972a4b06f73dbd7d970daa86aaae57" name="modules/sfSimpleForumForumAdmin/templates/_category.php" role="data"/>
+   <file md5sum="d52f667cbcc554c8ff0033e0fa5628d3" name="web/css/default.css" role="data"/>
+   <file md5sum="22d5a60157d5fd000e56a0dc95f60dc1" name="web/images/button_bg.gif" role="data"/>
+   <file md5sum="a22ab82fb3a33ece38c3ab5e0844154d" name="web/images/comment.png" role="data"/>
+   <file md5sum="7f921eb272b341361812f386377df256" name="web/images/comments.png" role="data"/>
+   <file md5sum="2168a573d0d45bd2f9a89b8236453d61" name="web/images/feed-icon.png" role="data"/>
+   <file md5sum="b508411bb915ecf32b1a995644f67fd1" name="web/images/lock.png" role="data"/>
+   <file md5sum="77491f6a50ed2e0945153809e2334713" name="web/images/note.png" role="data"/>
+   <file md5sum="572d955dfec771a9e143fe2242525a87" name="web/images/th_bg.gif" role="data"/>
+   <file md5sum="cc10f17a075275e8fb0a96f8afe45f64" name="README" role="data"/>
+   <file md5sum="cdb71bccbbf0995e74c3336c22db703c" name="LICENSE" role="data"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   
+  </required>
+ </dependencies>
+ <phprelease/>
+ <changelog>
+  <release>
+   <version>
+    <release>0.6.7</release>
+    <api>0.6.7</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2008-09-23</date>
+   <notes>* francois: Translated README to Markdown
+* francois: Changed counts types to integer</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.6</release>
+    <api>0.6.6</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2008-02-28</date>
+   <notes>* francois: Fixed broken link to feed (#2599)
+* francois: Packaged with other plugins into an application (cf. http://www.motilee.com)
+* Pascal.Borreli : Fixed incorrect use of a block element inside a inline element (#2628)
+* nicolas: Slightly refactored pagination helper
+* nicolas: Removed dependency on sfGuardUser</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.5</release>
+    <api>0.6.5</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2007-11-08</date>
+   <notes>* francois: Added two modules for backend administration
+* francois: Removed schema configuration file (use sfPropelAlternativeSchemaPlugin if you must customize the schema)
+* francois: Added a supplementary customization layer to the model classes</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.4</release>
+    <api>0.6.4</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2007-10-10</date>
+   <notes>* francois: Fixed missing files in package definition (#2336)
+* francois: Fixed empty forums do not appear in the forum list (#2330)
+* francois: Added a new partial to allow third-party profile enhancements
+* francois: Further optimized queries</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.3</release>
+    <api>0.6.3</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2007-10-03</date>
+   <notes>* francois: Extended the cache coverage
+* francois: Partialized templates for easier customization
+* francois: Refactored Forum and Topic counts (now working with save and delete)
+* francois: Made the schema customizable
+* francois: Added link to last page for multi-pages topics
+* francois: Refactored actions class for easier custom templating
+* francois: Fixed topic feed
+* francois: Added a topic list (for all forums, for one user) and related feeds</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.2</release>
+    <api>0.6.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2007-09-25</date>
+   <notes>* francois: Improved security and credentials handling
+* francois: [Break BC] Added a new topic table
+* francois: [Break BC] Refactored most of the code to be more extensible, performant and readable
+* francois: Added "New message to read" indicator in topics (distinct from topic views, because anonymous users must still increase the topic views)
+* francois: Better handling of post titles
+* francois: Refactored the way a forum knows about its last post
+* francois: Simplified the interface (removed buttons, lessened clicks)
+* francois: Added latest posts component
+* francois: Fixed page displayed after adding a message doesn't use pagination
+* francois: Added a new getMessage() action
+* francois: Switched icon set to famfamfam as I couldn't find where the sticky one came from
+* francois: Added locked topic feature
+* francois: Added unit tests for forum and topic calculated fields
+* francois: Fixed forum and topic calculated fields</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.1</release>
+    <api>0.6.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2007-09-07</date>
+   <notes>* francois: Optimized calculated fields in model
+* beleneglorion: Added sticky topic feature
+* francois: Added View count on topics
+* francois: Renamed sfBBPlugin to sfSimpleForumPlugin
+* francois: Fixed output escaping
+* superhaggis: Fixed typo in schema.yml</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.0</release>
+    <api>0.6.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2007-09-07</date>
+   <notes>* francois: Major refactoring from sfBBPlugin (breaks BC) but now the plugin is functional
+* francois: Removed the unimplemented parts</notes>
+  </release>
+ </changelog>
+</package>

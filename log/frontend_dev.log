@@ -1,0 +1,135 @@
+Jun 15 12:27:19 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /cv with parameters array (  'module' => 'cv',  'action' => 'index',)
+Jun 15 12:27:20 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 12:27:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 12:27:20 symfony [info] {CvActions} Call "CvActions->executeIndex()"
+Jun 15 12:27:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 15 12:27:20 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id_cv AS c__id_cv, c.iduser AS c__iduser, c.titrecv AS c__titrecv, c.descriptioncv AS c__descriptioncv, c.datedisponibilitecv AS c__datedisponibilitecv, c.tarifcv AS c__tarifcv, c.estvisiblecv AS c__estvisiblecv FROM cv c - ()
+Jun 15 12:27:20 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\modules/cv/templates/indexSuccess.php"
+Jun 15 12:27:20 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:27:20 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:27:20 symfony [err] {sfRenderException} The template "_getactualiteSuccess.php" does not exist or is unreadable in "".
+Jun 15 12:27:20 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jun 15 12:27:20 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 12:27:20 symfony [info] {sfWebDebugLogger} Configuration 221.43 ms (10)
+Jun 15 12:27:20 symfony [info] {sfWebDebugLogger} Factories 233.78 ms (1)
+Jun 15 12:27:20 symfony [info] {sfWebDebugLogger} Action "cv/index" 49.45 ms (1)
+Jun 15 12:27:20 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Jun 15 12:27:20 symfony [info] {sfWebDebugLogger} View "Success" for "cv/index" 146.63 ms (1)
+Jun 15 12:27:20 symfony [info] {sfWebDebugLogger} Partial "actualite/_getactualiteSuccess" 105.16 ms (1)
+Jun 15 12:27:29 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Jun 15 12:27:29 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 12:27:29 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 12:27:29 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Jun 15 12:27:29 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\lib\vendor\symfony\lib/controller/default/templates/indexSuccess.php"
+Jun 15 12:27:29 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Jun 15 12:27:29 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\lib\vendor\symfony\lib\controller\default\templates/defaultLayout.php"
+Jun 15 12:27:29 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 15 12:27:29 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 12:27:29 symfony [info] {sfWebDebugLogger} Configuration 77.45 ms (10)
+Jun 15 12:27:29 symfony [info] {sfWebDebugLogger} Factories 68.66 ms (1)
+Jun 15 12:27:29 symfony [info] {sfWebDebugLogger} Action "default/index" 0.28 ms (1)
+Jun 15 12:27:29 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 42.81 ms (1)
+Jun 15 12:27:29 symfony [info] {sfWebResponse} Send content (31595 o)
+Jun 15 12:27:33 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /Cv with parameters array (  'module' => 'Cv',  'action' => 'index',)
+Jun 15 12:27:33 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 12:27:33 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 12:27:33 symfony [info] {CvActions} Call "CvActions->executeIndex()"
+Jun 15 12:27:33 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 15 12:27:33 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id_cv AS c__id_cv, c.iduser AS c__iduser, c.titrecv AS c__titrecv, c.descriptioncv AS c__descriptioncv, c.datedisponibilitecv AS c__datedisponibilitecv, c.tarifcv AS c__tarifcv, c.estvisiblecv AS c__estvisiblecv FROM cv c - ()
+Jun 15 12:27:33 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\modules/Cv/templates/indexSuccess.php"
+Jun 15 12:27:33 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:27:33 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:27:33 symfony [err] {sfRenderException} The template "_getactualiteSuccess.php" does not exist or is unreadable in "".
+Jun 15 12:27:33 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jun 15 12:27:33 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 12:27:33 symfony [info] {sfWebDebugLogger} Configuration 14.66 ms (9)
+Jun 15 12:27:33 symfony [info] {sfWebDebugLogger} Factories 73.84 ms (1)
+Jun 15 12:27:33 symfony [info] {sfWebDebugLogger} Action "Cv/index" 53.32 ms (1)
+Jun 15 12:27:33 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Jun 15 12:27:33 symfony [info] {sfWebDebugLogger} View "Success" for "Cv/index" 106.21 ms (1)
+Jun 15 12:27:33 symfony [info] {sfWebDebugLogger} Partial "actualite/_getactualiteSuccess" 75.74 ms (1)
+Jun 15 12:29:24 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /Cv with parameters array (  'module' => 'Cv',  'action' => 'index',)
+Jun 15 12:29:24 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 12:29:24 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 12:29:24 symfony [info] {CvActions} Call "CvActions->executeIndex()"
+Jun 15 12:29:24 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 15 12:29:24 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id_cv AS c__id_cv, c.iduser AS c__iduser, c.titrecv AS c__titrecv, c.descriptioncv AS c__descriptioncv, c.datedisponibilitecv AS c__datedisponibilitecv, c.tarifcv AS c__tarifcv, c.estvisiblecv AS c__estvisiblecv FROM cv c - ()
+Jun 15 12:29:24 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\modules/Cv/templates/indexSuccess.php"
+Jun 15 12:29:24 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:29:24 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:29:24 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 15 12:29:24 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 12:29:24 symfony [info] {sfWebDebugLogger} Configuration 17.39 ms (9)
+Jun 15 12:29:24 symfony [info] {sfWebDebugLogger} Factories 79.06 ms (1)
+Jun 15 12:29:24 symfony [info] {sfWebDebugLogger} Action "Cv/index" 63.74 ms (1)
+Jun 15 12:29:24 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Jun 15 12:29:24 symfony [info] {sfWebDebugLogger} View "Success" for "Cv/index" 29.33 ms (1)
+Jun 15 12:29:24 symfony [info] {sfWebResponse} Send content (56194 o)
+Jun 15 12:36:06 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /Cv with parameters array (  'module' => 'Cv',  'action' => 'index',)
+Jun 15 12:36:06 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 12:36:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 12:36:06 symfony [info] {CvActions} Call "CvActions->executeIndex()"
+Jun 15 12:36:06 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 15 12:36:06 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id_cv AS c__id_cv, c.iduser AS c__iduser, c.titrecv AS c__titrecv, c.descriptioncv AS c__descriptioncv, c.datedisponibilitecv AS c__datedisponibilitecv, c.tarifcv AS c__tarifcv, c.estvisiblecv AS c__estvisiblecv FROM cv c - ()
+Jun 15 12:36:06 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\modules/Cv/templates/indexSuccess.php"
+Jun 15 12:36:06 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:36:06 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:36:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 15 12:36:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 12:36:06 symfony [info] {sfWebDebugLogger} Configuration 12.88 ms (9)
+Jun 15 12:36:06 symfony [info] {sfWebDebugLogger} Factories 61.21 ms (1)
+Jun 15 12:36:06 symfony [info] {sfWebDebugLogger} Action "Cv/index" 51.29 ms (1)
+Jun 15 12:36:06 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Jun 15 12:36:06 symfony [info] {sfWebDebugLogger} View "Success" for "Cv/index" 28.78 ms (1)
+Jun 15 12:36:06 symfony [info] {sfWebResponse} Send content (56249 o)
+Jun 15 12:36:57 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /Cv with parameters array (  'module' => 'Cv',  'action' => 'index',)
+Jun 15 12:36:57 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 12:36:57 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 12:36:57 symfony [info] {CvActions} Call "CvActions->executeIndex()"
+Jun 15 12:36:57 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 15 12:36:57 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id_cv AS c__id_cv, c.iduser AS c__iduser, c.titrecv AS c__titrecv, c.descriptioncv AS c__descriptioncv, c.datedisponibilitecv AS c__datedisponibilitecv, c.tarifcv AS c__tarifcv, c.estvisiblecv AS c__estvisiblecv FROM cv c - ()
+Jun 15 12:36:57 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\modules/Cv/templates/indexSuccess.php"
+Jun 15 12:36:57 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:36:57 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:36:57 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 15 12:36:57 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 12:36:57 symfony [info] {sfWebDebugLogger} Configuration 14.01 ms (9)
+Jun 15 12:36:57 symfony [info] {sfWebDebugLogger} Factories 67.84 ms (1)
+Jun 15 12:36:57 symfony [info] {sfWebDebugLogger} Action "Cv/index" 53.44 ms (1)
+Jun 15 12:36:57 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Jun 15 12:36:57 symfony [info] {sfWebDebugLogger} View "Success" for "Cv/index" 25.32 ms (1)
+Jun 15 12:36:57 symfony [info] {sfWebResponse} Send content (56253 o)
+Jun 15 12:37:52 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /Cv with parameters array (  'module' => 'Cv',  'action' => 'index',)
+Jun 15 12:37:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 12:37:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 12:37:52 symfony [info] {CvActions} Call "CvActions->executeIndex()"
+Jun 15 12:37:52 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 15 12:37:52 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id_cv AS c__id_cv, c.iduser AS c__iduser, c.titrecv AS c__titrecv, c.descriptioncv AS c__descriptioncv, c.datedisponibilitecv AS c__datedisponibilitecv, c.tarifcv AS c__tarifcv, c.estvisiblecv AS c__estvisiblecv FROM cv c - ()
+Jun 15 12:37:52 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\modules/Cv/templates/indexSuccess.php"
+Jun 15 12:37:52 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:37:52 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 12:37:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 15 12:37:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 12:37:52 symfony [info] {sfWebDebugLogger} Configuration 15.87 ms (9)
+Jun 15 12:37:52 symfony [info] {sfWebDebugLogger} Factories 64.24 ms (1)
+Jun 15 12:37:52 symfony [info] {sfWebDebugLogger} Action "Cv/index" 49.50 ms (1)
+Jun 15 12:37:52 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Jun 15 12:37:52 symfony [info] {sfWebDebugLogger} View "Success" for "Cv/index" 24.76 ms (1)
+Jun 15 12:37:52 symfony [info] {sfWebResponse} Send content (56156 o)
+Jun 15 14:16:20 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /Cv with parameters array (  'module' => 'Cv',  'action' => 'index',)
+Jun 15 14:16:20 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jun 15 14:16:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 15 14:16:20 symfony [info] {CvActions} Call "CvActions->executeIndex()"
+Jun 15 14:16:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 15 14:16:20 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id_cv AS c__id_cv, c.iduser AS c__iduser, c.titrecv AS c__titrecv, c.descriptioncv AS c__descriptioncv, c.datedisponibilitecv AS c__datedisponibilitecv, c.tarifcv AS c__tarifcv, c.estvisiblecv AS c__estvisiblecv FROM cv c - ()
+Jun 15 14:16:20 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\modules/Cv/templates/indexSuccess.php"
+Jun 15 14:16:20 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 14:16:20 symfony [info] {sfPHPView} Render "C:\development\sfprojects\ConsultingCoffee\apps\frontend\templates/layout.php"
+Jun 15 14:16:20 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jun 15 14:16:20 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jun 15 14:16:20 symfony [info] {sfWebDebugLogger} Configuration 19.20 ms (9)
+Jun 15 14:16:20 symfony [info] {sfWebDebugLogger} Factories 80.76 ms (1)
+Jun 15 14:16:20 symfony [info] {sfWebDebugLogger} Action "Cv/index" 48.15 ms (1)
+Jun 15 14:16:20 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+Jun 15 14:16:20 symfony [info] {sfWebDebugLogger} View "Success" for "Cv/index" 25.26 ms (1)
+Jun 15 14:16:20 symfony [info] {sfWebResponse} Send content (56124 o)

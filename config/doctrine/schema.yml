@@ -1,0 +1,888 @@
+Avendu:
+  connection: doctrine
+  tableName: avendu
+  columns:
+    iduser:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    idideas:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    datevente:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    envoieconfirmation:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    prixvente:
+      type: float(15)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Ideas:
+      local: idideas
+      foreign: idideas
+      type: one
+    User:
+      local: iduser
+      foreign: iduser
+      type: one
+Catgeoryidea:
+  connection: doctrine
+  tableName: catgeoryidea
+  columns:
+    idcatgeoryidea:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    nom_catgeoryidea:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Ideas:
+      local: idcatgeoryidea
+      foreign: idcatgeoryidea
+      type: many
+City:
+  connection: doctrine
+  tableName: city
+  columns:
+    id_city:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idcountry:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    cityname:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Country:
+      local: idcountry
+      foreign: idcountry
+      type: one
+    Job:
+      local: id_city
+      foreign: id_city
+      type: many
+Confidentialitylevel:
+  connection: doctrine
+  tableName: confidentialitylevel
+  columns:
+    id_confidentialitylevel:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    nameconfidentialitylevel:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Document:
+      local: id_confidentialitylevel
+      foreign: id_confidentialitylevel
+      type: many
+Country:
+  connection: doctrine
+  tableName: country
+  columns:
+    idcountry:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    namecountry:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    City:
+      local: idcountry
+      foreign: idcountry
+      type: many
+    Job:
+      local: idcountry
+      foreign: idcountry
+      type: many
+Cv:
+  connection: doctrine
+  tableName: cv
+  columns:
+    id_cv:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    iduser:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titrecv:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descriptioncv:
+      type: string(300)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    datedisponibilitecv:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    tarifcv:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    estvisiblecv:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    User:
+      local: iduser
+      foreign: iduser
+      type: one
+    Experience:
+      local: id_cv
+      foreign: id_cv
+      type: many
+Document:
+  connection: doctrine
+  tableName: document
+  columns:
+    iddocument:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idideas:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    id_confidentialitylevel:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titredocument:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descriptiondocument:
+      type: string(4000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    chemindocument:
+      type: string(300)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Ideas:
+      local: idideas
+      foreign: idideas
+      type: one
+    Confidentialitylevel:
+      local: id_confidentialitylevel
+      foreign: id_confidentialitylevel
+      type: one
+    Formatlistaccept:
+      local: iddocument
+      foreign: iddocument
+      type: many
+Documenttype:
+  connection: doctrine
+  tableName: documenttype
+  columns:
+    iddocumenttype:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    documenttypename:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Formatlistaccept:
+      local: iddocumenttype
+      foreign: iddocumenttype
+      type: many
+Experience:
+  connection: doctrine
+  tableName: experience
+  columns:
+    idexperience:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    id_cv:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titreexperience:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descriptionexperience:
+      type: string(4000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    datedebexperience:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    datefinexperience:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Cv:
+      local: id_cv
+      foreign: id_cv
+      type: one
+Expertise:
+  connection: doctrine
+  tableName: expertise
+  columns:
+    idexpertise:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    expertisename:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    totalsupplierexpertise:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Haveexpertisein:
+      local: idexpertise
+      foreign: idexpertise
+      type: many
+Formatlistaccept:
+  connection: doctrine
+  tableName: formatlistaccept
+  columns:
+    iddocumenttype:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    iddocument:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    Document:
+      local: iddocument
+      foreign: iddocument
+      type: one
+    Documenttype:
+      local: iddocumenttype
+      foreign: iddocumenttype
+      type: one
+Haveexpertisein:
+  connection: doctrine
+  tableName: haveexpertisein
+  columns:
+    idexpertise:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    iduser:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    User:
+      local: iduser
+      foreign: iduser
+      type: one
+    Expertise:
+      local: idexpertise
+      foreign: idexpertise
+      type: one
+Ideas:
+  connection: doctrine
+  tableName: ideas
+  columns:
+    idideas:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idcatgeoryidea:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    iduser:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titreideas:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descriptionideas:
+      type: string(4000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    priceideas:
+      type: float(15)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Catgeoryidea:
+      local: idcatgeoryidea
+      foreign: idcatgeoryidea
+      type: one
+    User:
+      local: iduser
+      foreign: iduser
+      type: one
+    Avendu:
+      local: idideas
+      foreign: idideas
+      type: many
+    Document:
+      local: idideas
+      foreign: idideas
+      type: many
+Job:
+  connection: doctrine
+  tableName: job
+  columns:
+    idjob:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idcountry:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    id_city:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    iduser:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idsubjobcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    jobname:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descriptionjob:
+      type: string(4000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    datedeadlinejob:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    User:
+      local: iduser
+      foreign: iduser
+      type: one
+    Country:
+      local: idcountry
+      foreign: idcountry
+      type: one
+    City:
+      local: id_city
+      foreign: id_city
+      type: one
+    Subjobcategory:
+      local: idsubjobcategory
+      foreign: idsubjobcategory
+      type: one
+Jobcategory:
+  connection: doctrine
+  tableName: jobcategory
+  columns:
+    idjobcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    titlejobcategory:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Subjobcategory:
+      local: idjobcategory
+      foreign: idjobcategory
+      type: many
+Sector:
+  connection: doctrine
+  tableName: sector
+  columns:
+    id_sector:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    sectorname:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    totalsuppliersector:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Workinsector:
+      local: id_sector
+      foreign: id_sector
+      type: many
+Subjobcategory:
+  connection: doctrine
+  tableName: subjobcategory
+  columns:
+    idsubjobcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idjobcategory:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titlesubjobcategory:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Jobcategory:
+      local: idjobcategory
+      foreign: idjobcategory
+      type: one
+    Job:
+      local: idsubjobcategory
+      foreign: idsubjobcategory
+      type: many
+User:
+  connection: doctrine
+  tableName: user
+  columns:
+    iduser:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    idusertype:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    titreuser:
+      type: string(5)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nameuser:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    surnameuser:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    adressuser:
+      type: string(10)
+      fixed: true
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    countryuser:
+      type: string(10)
+      fixed: true
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    raisonsocialuser:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    phonenumberuser:
+      type: string(10)
+      fixed: true
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    mailuser:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    pwduser:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    isactivateuser:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    lastconnexionuser:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    zipcodeuser:
+      type: string(10)
+      fixed: true
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    jobdescriptionuser:
+      type: string(3000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    corporationsize:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    isacceptemailnews:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    apayersacotisationpourpublication:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    datevalidationpayement:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    datefinvalidation:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    isconsultant:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    isrecruteur:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    issupplier:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Usertype:
+      local: idusertype
+      foreign: idusertype
+      type: one
+    Avendu:
+      local: iduser
+      foreign: iduser
+      type: many
+    Cv:
+      local: iduser
+      foreign: iduser
+      type: many
+    Haveexpertisein:
+      local: iduser
+      foreign: iduser
+      type: many
+    Ideas:
+      local: iduser
+      foreign: iduser
+      type: many
+    Job:
+      local: iduser
+      foreign: iduser
+      type: many
+    Workinsector:
+      local: iduser
+      foreign: iduser
+      type: many
+Usertype:
+  connection: doctrine
+  tableName: usertype
+  columns:
+    idusertype:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    nameusertype:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    totalsupplierusertype:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    User:
+      local: idusertype
+      foreign: idusertype
+      type: many
+Workinsector:
+  connection: doctrine
+  tableName: workinsector
+  columns:
+    id_sector:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    iduser:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    User:
+      local: iduser
+      foreign: iduser
+      type: one
+    Sector:
+      local: id_sector
+      foreign: id_sector
+      type: one

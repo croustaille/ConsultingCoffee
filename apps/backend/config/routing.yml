@@ -1,0 +1,160 @@
+usertype:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Usertype
+    module:               usertype
+    prefix_path:          /usertype
+    column:               idusertype
+    with_wildcard_routes: true
+
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                User
+    module:               user
+    prefix_path:          /user
+    column:               iduser
+    with_wildcard_routes: true
+
+subjobcategory:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Subjobcategory
+    module:               subjobcategory
+    prefix_path:          /subjobcategory
+    column:               idsubjobcategory
+    with_wildcard_routes: true
+
+sector:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Sector
+    module:               sector
+    prefix_path:          /sector
+    column:               id_sector
+    with_wildcard_routes: true
+
+jobcategory:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Jobcategory
+    module:               jobcategory
+    prefix_path:          /jobcategory
+    column:               idjobcategory
+    with_wildcard_routes: true
+
+job:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Job
+    module:               job
+    prefix_path:          /job
+    column:               idjob
+    with_wildcard_routes: true
+
+ideas:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Ideas
+    module:               ideas
+    prefix_path:          /ideas
+    column:               idideas
+    with_wildcard_routes: true
+
+expertise:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Expertise
+    module:               expertise
+    prefix_path:          /expertise
+    column:               idexpertise
+    with_wildcard_routes: true
+
+experience:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Experience
+    module:               experience
+    prefix_path:          /experience
+    column:               idexperience
+    with_wildcard_routes: true
+
+documenttype:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Documenttype
+    module:               documenttype
+    prefix_path:          /documenttype
+    column:               iddocumenttype
+    with_wildcard_routes: true
+
+document:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Document
+    module:               document
+    prefix_path:          /document
+    column:               iddocument
+    with_wildcard_routes: true
+
+cv:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Cv
+    module:               cv
+    prefix_path:          /cv
+    column:               id_cv
+    with_wildcard_routes: true
+
+country:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Country
+    module:               country
+    prefix_path:          /country
+    column:               idcountry
+    with_wildcard_routes: true
+
+confidentialitylevel:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Confidentialitylevel
+    module:               confidentialitylevel
+    prefix_path:          /confidentialitylevel
+    column:               id_confidentialitylevel
+    with_wildcard_routes: true
+
+city:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                City
+    module:               city
+    prefix_path:          /city
+    column:               id_city
+    with_wildcard_routes: true
+
+catgeoryidea:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Catgeoryidea
+    module:               catgeoryidea
+    prefix_path:          /catgeoryidea
+    column:               idcatgeoryidea
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
