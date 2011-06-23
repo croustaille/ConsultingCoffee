@@ -7,23 +7,21 @@
  *
  * @package    ConsultingCoffee
  * @subpackage form
- * @author     OUTTRABADY Lucky
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
+ * @author     Your name here
+ * @version    SVN: $Id$
  */
 abstract class BaseSectorForm extends BaseFormDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'id_sector'           => new sfWidgetFormInputHidden(),
-      'sectorname'          => new sfWidgetFormInputText(),
-      'totalsuppliersector' => new sfWidgetFormInputText(),
+      'id'    => new sfWidgetFormInputHidden(),
+      'title' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'id_sector'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id_sector')), 'empty_value' => $this->getObject()->get('id_sector'), 'required' => false)),
-      'sectorname'          => new sfValidatorString(array('max_length' => 150, 'required' => false)),
-      'totalsuppliersector' => new sfValidatorInteger(array('required' => false)),
+      'id'    => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
+      'title' => new sfValidatorString(array('max_length' => 100)),
     ));
 
     $this->widgetSchema->setNameFormat('sector[%s]');
@@ -33,6 +31,27 @@ abstract class BaseSectorForm extends BaseFormDoctrine
     $this->setupInheritance();
 
     parent::setup();
+    
+    // Unset automatic fields like 'created_at', 'updated_at', 'position'
+    // override this method in your form to keep them
+    parent::unsetAutoFields();
+  }
+
+
+  protected function doBind(array $values)
+  {
+    parent::doBind($values);
+  }
+  
+  public function processValues($values)
+  {
+    $values = parent::processValues($values);
+    return $values;
+  }
+  
+  protected function doUpdateObject($values)
+  {
+    parent::doUpdateObject($values);
   }
 
   public function getModelName()

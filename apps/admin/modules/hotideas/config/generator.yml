@@ -1,0 +1,47 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Hotideas
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: hotideas
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - categoryidea
+          - image
+          - author
+          - price
+          - extract
+          - body
+          - is_active
+          - created_at
+          - updated_at
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: true
+      filter:
+        display:
+          - title
+          - price
+          - image
+          - categoryidea
+          - author
+      form:
+        display:
+          NONE: [title, is_active, categoryidea, author]
+          Image: [image_form, image_view]
+          Body: [body]
+          Others: [price, extract]
+        class: HotideasAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

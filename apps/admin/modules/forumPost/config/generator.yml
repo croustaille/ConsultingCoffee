@@ -1,0 +1,45 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: ForumPost
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: forum_post
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - content
+          - topic
+          - author
+          - created_at
+          - forum
+          - author_name
+        sort:
+          - created_at
+          - desc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - content
+          - topic
+          - author
+          - created_at
+          - forum
+          - author_name
+      form:
+        display:
+          NONE: [title]
+          Content: [content]
+          Others: [topic, author, forum, author_name]
+        class: ForumPostAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

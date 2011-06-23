@@ -1,888 +1,196 @@
-Avendu:
-  connection: doctrine
-  tableName: avendu
-  columns:
-    iduser:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    idideas:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    datevente:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    envoieconfirmation:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    prixvente:
-      type: float(15)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Ideas:
-      local: idideas
-      foreign: idideas
-      type: one
-    User:
-      local: iduser
-      foreign: iduser
-      type: one
-Catgeoryidea:
-  connection: doctrine
-  tableName: catgeoryidea
-  columns:
-    idcatgeoryidea:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    nom_catgeoryidea:
-      type: string(50)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-  relations:
-    Ideas:
-      local: idcatgeoryidea
-      foreign: idcatgeoryidea
-      type: many
-City:
-  connection: doctrine
-  tableName: city
-  columns:
-    id_city:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    idcountry:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    cityname:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Country:
-      local: idcountry
-      foreign: idcountry
-      type: one
-    Job:
-      local: id_city
-      foreign: id_city
-      type: many
-Confidentialitylevel:
-  connection: doctrine
-  tableName: confidentialitylevel
-  columns:
-    id_confidentialitylevel:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    nameconfidentialitylevel:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Document:
-      local: id_confidentialitylevel
-      foreign: id_confidentialitylevel
-      type: many
+Categoryidea:
+ columns:
+  title:            { type: string(100), notnull: true }
+Expertise:
+ columns:
+  title:            { type: string(100), notnull: true }
+Sector:
+ columns:
+  title:            { type: string(100), notnull: true }
+Usertype:
+ columns:
+  title:            { type: string(100), notnull: true }
+Jobcategory:
+ columns:
+  title:            { type: string(100), notnull: true }
 Country:
-  connection: doctrine
-  tableName: country
-  columns:
-    idcountry:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    namecountry:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    City:
-      local: idcountry
-      foreign: idcountry
-      type: many
-    Job:
-      local: idcountry
-      foreign: idcountry
-      type: many
+ columns:
+  title:            { type: string(100), notnull: true }
+Confidentialitylevel:
+ columns:
+  title:            { type: string100), notnull: true }
+DmUser:  
+  columns:  
+    title:            { type: string(10), notnull: true }  
+    firstname:        { type: string(100), notnull: true }  
+    cellphonenumber:  { type: string(30), notnull: false }  
+    fixephoneNumber:  { type: string(30), notnull: false }  
+    faxNumber:        { type: string(30), notnull: false }  
+    society:          { type: string(120), notnull: true }  
+    adress:           { type: string(300), notnull: false }  
+    zipcode:          { type: string(20), notnull: false }  
+    city:             { type: string(120), notnull: false } 
+    description:      { type: clob, extra: markdown }  
+    photo:            { type: integer }  
+    country:          { type: integer }  
+    datepayement:     { type: date, notnull: false }  
+    expertise:        { type: integer } 
+    sector:           { type: integer }  
+    usertype:         { type: integer }  
+    isConsultant:     { type: boolean, notnull: true, default: false }  
+    isRecruteur:      { type: boolean, notnull: true, default: false }   
+    isSupplier:       { type: boolean, notnull: true, default: false }  
+  relations:  
+    Photo:  
+      class:       DmMedia  
+      local:       photo  
+      onDelete:    RESTRICT
+    Sector:
+      class:       Sector  
+      local:       sector  
+      onDelete:    RESTRICT
+    Expertise:
+      class:       Expertise  
+      local:       expertise  
+      onDelete:    RESTRICT	  
+    Usertype:
+      class:       Usertype  
+      local:       usertype  
+      onDelete:    RESTRICT	
+    Country:
+      class:       Country  
+      local:       country  
+      onDelete:    RESTRICT	
 Cv:
-  connection: doctrine
-  tableName: cv
   columns:
-    id_cv:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    iduser:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    titrecv:
-      type: string(100)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    descriptioncv:
-      type: string(300)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    datedisponibilitecv:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    tarifcv:
-      type: string(50)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    estvisiblecv:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    User:
-      local: iduser
-      foreign: iduser
-      type: one
-    Experience:
-      local: id_cv
-      foreign: id_cv
-      type: many
-Document:
-  connection: doctrine
-  tableName: document
-  columns:
-    iddocument:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    idideas:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    id_confidentialitylevel:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    titredocument:
-      type: string(100)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    descriptiondocument:
-      type: string(4000)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    chemindocument:
-      type: string(300)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Ideas:
-      local: idideas
-      foreign: idideas
-      type: one
-    Confidentialitylevel:
-      local: id_confidentialitylevel
-      foreign: id_confidentialitylevel
-      type: one
-    Formatlistaccept:
-      local: iddocument
-      foreign: iddocument
-      type: many
-Documenttype:
-  connection: doctrine
-  tableName: documenttype
-  columns:
-    iddocumenttype:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    documenttypename:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Formatlistaccept:
-      local: iddocumenttype
-      foreign: iddocumenttype
-      type: many
+    title:             { type: string(100), notnull: true }
+    description:       { type: clob, extra: markdown }
+    datedisponibilite: { type: date, notnull: false }  
+    user:              { type: integer, notnull: true }  
+    tarif:             { type: string(120), notnull: false }
+    isvisible:         { type: boolean, notnull: true, default: false }
+    isdisponible:      { type: boolean, notnull: true, default: false }
+  relations:  
+    User:  
+      class: DmUser  
+      local: user  
+      foreignAlias:   Cv
 Experience:
-  connection: doctrine
-  tableName: experience
   columns:
-    idexperience:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    id_cv:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    titreexperience:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    descriptionexperience:
-      type: string(4000)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    datedebexperience:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    datefinexperience:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
+    title:          { type: string(100), notnull: true }
+    description:    { type: clob, extra: markdown }
+    datedeb:        { type: date, notnull: false } 
+    datefin:        { type: date, notnull: false } 
+    cv:             { type: integer } 
   relations:
     Cv:
-      local: id_cv
-      foreign: id_cv
-      type: one
-Expertise:
-  connection: doctrine
-  tableName: expertise
-  columns:
-    idexpertise:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    expertisename:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    totalsupplierexpertise:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
+      class:       Cv  
+      local:       cv  
+      foreignAlias:   Experience
+Hotideas:  
+  actAs:  
+    DmSortable:  
+    I18n:  
+      fields:         [ title, extract, body, is_active ]  
+      actAs:  
+        Timestampable:  
+        DmVersionable:  
+  columns:  
+    title:            { type: string(120), notnull: true }  
+    extract:          { type: string(2000), notnull: true }  
+    price:            { type: string(80), notnull: true } 
+    body:             { type: clob, extra: markdown }  
+    image:            { type: integer } 
+    categoryidea:     { type: integer } 
+    author:           { type: integer, notnull: true }  
+    is_active:        { type: boolean, notnull: true, default: false }  
   relations:
-    Haveexpertisein:
-      local: idexpertise
-      foreign: idexpertise
-      type: many
-Formatlistaccept:
-  connection: doctrine
-  tableName: formatlistaccept
-  columns:
-    iddocumenttype:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    iddocument:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-  relations:
-    Document:
-      local: iddocument
-      foreign: iddocument
-      type: one
-    Documenttype:
-      local: iddocumenttype
-      foreign: iddocumenttype
-      type: one
-Haveexpertisein:
-  connection: doctrine
-  tableName: haveexpertisein
-  columns:
-    idexpertise:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    iduser:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-  relations:
-    User:
-      local: iduser
-      foreign: iduser
-      type: one
-    Expertise:
-      local: idexpertise
-      foreign: idexpertise
-      type: one
-Ideas:
-  connection: doctrine
-  tableName: ideas
-  columns:
-    idideas:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    idcatgeoryidea:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    iduser:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    titreideas:
-      type: string(100)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    descriptionideas:
-      type: string(4000)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    priceideas:
-      type: float(15)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Catgeoryidea:
-      local: idcatgeoryidea
-      foreign: idcatgeoryidea
-      type: one
-    User:
-      local: iduser
-      foreign: iduser
-      type: one
-    Avendu:
-      local: idideas
-      foreign: idideas
-      type: many
-    Document:
-      local: idideas
-      foreign: idideas
-      type: many
-Job:
-  connection: doctrine
-  tableName: job
-  columns:
-    idjob:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    idcountry:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    id_city:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    iduser:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    idsubjobcategory:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    jobname:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    descriptionjob:
-      type: string(4000)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    datedeadlinejob:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    User:
-      local: iduser
-      foreign: iduser
-      type: one
-    Country:
-      local: idcountry
-      foreign: idcountry
-      type: one
-    City:
-      local: id_city
-      foreign: id_city
-      type: one
-    Subjobcategory:
-      local: idsubjobcategory
-      foreign: idsubjobcategory
-      type: one
-Jobcategory:
-  connection: doctrine
-  tableName: jobcategory
-  columns:
-    idjobcategory:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    titlejobcategory:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Subjobcategory:
-      local: idjobcategory
-      foreign: idjobcategory
-      type: many
-Sector:
-  connection: doctrine
-  tableName: sector
-  columns:
-    id_sector:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    sectorname:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    totalsuppliersector:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Workinsector:
-      local: id_sector
-      foreign: id_sector
-      type: many
+    Categoryidea:  
+      class:          Categoryidea  
+      local:          categoryidea  
+      foreignAlias:   Hotideas 
+    Image:  
+      class:          DmMedia  
+      local:          image  
+      foreignAlias:   Hotideas  
+    Author:  
+      class: DmUser  
+      local: author  
+      foreignAlias:   Hotideas
 Subjobcategory:
-  connection: doctrine
-  tableName: subjobcategory
   columns:
-    idsubjobcategory:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    idjobcategory:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    titlesubjobcategory:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
+    title:          { type: string(100), notnull: true }
+    jobcategory:       { type: integer } 
   relations:
     Jobcategory:
-      local: idjobcategory
-      foreign: idjobcategory
-      type: one
-    Job:
-      local: idsubjobcategory
-      foreign: idsubjobcategory
-      type: many
-User:
-  connection: doctrine
-  tableName: user
+      class:       Jobcategory  
+      local:       jobcategory  
+      foreignAlias:   Subjobcategory
+Job:
   columns:
-    iduser:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    idusertype:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    titreuser:
-      type: string(5)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    nameuser:
-      type: string(100)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    surnameuser:
-      type: string(100)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    adressuser:
-      type: string(10)
-      fixed: true
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    countryuser:
-      type: string(10)
-      fixed: true
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    raisonsocialuser:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    phonenumberuser:
-      type: string(10)
-      fixed: true
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    mailuser:
-      type: string(100)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    pwduser:
-      type: string(100)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    isactivateuser:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    lastconnexionuser:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    zipcodeuser:
-      type: string(10)
-      fixed: true
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    jobdescriptionuser:
-      type: string(3000)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    corporationsize:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    isacceptemailnews:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    apayersacotisationpourpublication:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    datevalidationpayement:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    datefinvalidation:
-      type: date(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    isconsultant:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    isrecruteur:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    issupplier:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
+    title:            { type: string(100), notnull: true }
+    description:      { type: clob, extra: markdown }
+    city:             { type: string(120), notnull: true }
+    dateperemption:   { type: date, notnull: false }
+    country:          { type: integer } 
+    author:   { type: integer } 
+    subjobcategory:   { type: integer } 
   relations:
-    Usertype:
-      local: idusertype
-      foreign: idusertype
-      type: one
-    Avendu:
-      local: iduser
-      foreign: iduser
-      type: many
-    Cv:
-      local: iduser
-      foreign: iduser
-      type: many
-    Haveexpertisein:
-      local: iduser
-      foreign: iduser
-      type: many
-    Ideas:
-      local: iduser
-      foreign: iduser
-      type: many
-    Job:
-      local: iduser
-      foreign: iduser
-      type: many
-    Workinsector:
-      local: iduser
-      foreign: iduser
-      type: many
-Usertype:
-  connection: doctrine
-  tableName: usertype
+    Subjobcategory:
+      class:       Subjobcategory  
+      local:       subjobcategory  
+      foreignAlias:   Job
+    Country:
+      class:       Country  
+      local:       country  
+      foreignAlias:   Job
+    Author:  
+      class: DmUser  
+      local: author  
+      foreignAlias:   Job
+Forumcategory:
   columns:
-    idusertype:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    nameusertype:
-      type: string(150)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    totalsupplierusertype:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    User:
-      local: idusertype
-      foreign: idusertype
-      type: many
-Workinsector:
-  connection: doctrine
-  tableName: workinsector
-  columns:
-    id_sector:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    iduser:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-  relations:
-    User:
-      local: iduser
-      foreign: iduser
-      type: one
-    Sector:
-      local: id_sector
-      foreign: id_sector
-      type: one
+    title:          { type: string(255), notnull: true }
+    strippedname:   { type: string(255), notnull: true }
+    description:    { type: clob, extra: markdown } 
+    rank:           { type: integer } 
+    created_at:     { type: date, notnull: false } 
+Forum:
+ columns:
+    title:         { type: string(255), notnull: true }
+    description:   { type: clob, extra: markdown } 
+    rank:          { type: integer } 
+    category:      { type: integer } 
+    created_at:    { type: date, notnull: false } 
+    updated_at:    { type: date, notnull: false } 
+    stripped_name: { type: string(255), notnull: true }
+    latest_post:   { type: integer } 
+    nb_posts:      { type: integer } 
+    nb_topics:     { type: integer } 
+Forumtopic:
+ columns:
+    title:          { type: string(255), notnull: true }
+    is_sticked:     { type: boolean, default: false }
+    is_locked:      { type: boolean, default: false }
+    forum:          { type: integer }
+    created_at:     { type: date, notnull: false } 
+    updated_at:     { type: date, notnull: false } 
+    latest_post:    { type: integer }
+    author:         { type: integer }
+    stripped_title: { type: string(255), notnull: true }
+    nb_posts:       { type: integer, default: 0 }
+    nb_views:       { type: integer, default: 0 }
+Forumpost:
+ columns:
+    title:          { type: string(255), notnull: true }
+    content:        { type: clob, extra: markdown } 
+    topic:          { type: integer }
+    author:         { type: integer }
+    created_at:     { type: date, notnull: false } 
+    forum:          { type: integer }
+    author_name:    { type: string(255), notnull: true }
+Forumtopicview:
+ columns:
+    author:       { type: integer }
+    topic:        { type: integer }
+    created_at:   { type: date, notnull: false } 

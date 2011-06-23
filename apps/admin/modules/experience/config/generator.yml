@@ -1,0 +1,41 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Experience
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: experience
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - cv
+          - description
+          - datedeb
+          - datefin
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - description
+          - datedeb
+          - datefin
+          - cv
+      form:
+        display:
+          NONE: [title, cv]
+          Description: [description]
+          Others: [datedeb, datefin]
+        class: ExperienceAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

@@ -5,19 +5,19 @@
  *
  * @package    ConsultingCoffee
  * @subpackage filter
- * @author     OUTTRABADY Lucky
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
+ * @author     Your name here
+ * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
  */
 abstract class BaseConfidentialitylevelFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'nameconfidentialitylevel' => new sfWidgetFormFilterInput(),
+      'title' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'nameconfidentialitylevel' => new sfValidatorPass(array('required' => false)),
+      'title' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('confidentialitylevel_filters[%s]');
@@ -37,8 +37,8 @@ abstract class BaseConfidentialitylevelFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id_confidentialitylevel'  => 'Number',
-      'nameconfidentialitylevel' => 'Text',
+      'id'    => 'Number',
+      'title' => 'Text',
     );
   }
 }

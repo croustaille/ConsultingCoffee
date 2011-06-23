@@ -1,0 +1,43 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Job
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: job
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - subjobcategory
+          - country
+          - description
+          - city
+          - dateperemption
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - description
+          - city
+          - dateperemption
+          - country
+          - subjobcategory
+      form:
+        display:
+          NONE: [title, subjobcategory, country]
+          Description: [description]
+          Others: [city, dateperemption]
+        class: JobAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

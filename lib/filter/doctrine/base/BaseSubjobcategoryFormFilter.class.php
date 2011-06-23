@@ -5,21 +5,21 @@
  *
  * @package    ConsultingCoffee
  * @subpackage filter
- * @author     OUTTRABADY Lucky
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
+ * @author     Your name here
+ * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
  */
 abstract class BaseSubjobcategoryFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'idjobcategory'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Jobcategory'), 'add_empty' => true)),
-      'titlesubjobcategory' => new sfWidgetFormFilterInput(),
+      'title'       => new sfWidgetFormFilterInput(),
+      'jobcategory' => new sfWidgetFormDoctrineChoice(array('model' => 'Jobcategory', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'idjobcategory'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Jobcategory'), 'column' => 'idjobcategory')),
-      'titlesubjobcategory' => new sfValidatorPass(array('required' => false)),
+      'title'       => new sfValidatorPass(array('required' => false)),
+      'jobcategory' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Jobcategory'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('subjobcategory_filters[%s]');
@@ -39,9 +39,9 @@ abstract class BaseSubjobcategoryFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'idsubjobcategory'    => 'Number',
-      'idjobcategory'       => 'ForeignKey',
-      'titlesubjobcategory' => 'Text',
+      'id'          => 'Number',
+      'title'       => 'Text',
+      'jobcategory' => 'ForeignKey',
     );
   }
 }

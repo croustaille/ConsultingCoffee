@@ -1,0 +1,84 @@
+Content:
+
+  Global:
+  
+    main:                   # the main module is required, and must not be removed.
+      components:
+        header:
+        footer:
+    dmUser:  
+      components:  
+        editProfil:
+Parameters:
+
+  Parameters:  
+  
+    categoryidea:
+    expertise:
+    Sector:
+    usertype:
+    jobcategory:
+    Country:
+    confidentialitylevel:
+    subjobcategory:
+'Informations Users':
+
+  Informations:  
+  
+    cv:
+     page: true
+     components:
+      list:
+      listPersonal:
+      form:
+      show:
+      edit:
+    experience:
+    hotideas:
+     page: true
+     components:
+      list:
+      listPersonal:
+      form:
+      show:
+      edit:
+    job:
+     page: true
+     components:
+      list:
+      listPersonal:
+      form:
+      show:
+      edit:
+Forum:
+
+  'Forum block':
+  
+    forumcategory:
+     page: true
+     components:
+      list:
+      form:
+      show:
+      edit:	  
+    forum:
+     page: true
+     components:
+      list:
+      form:
+      show:
+      edit:	  
+    forumtopic:
+     page: true
+     components:
+      list:
+      form:
+      show:
+      edit:	  
+    forumPost:
+     page: true
+     components:
+      list:
+      form:
+      show:
+      edit:	   

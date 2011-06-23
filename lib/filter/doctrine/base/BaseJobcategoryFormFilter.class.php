@@ -5,19 +5,19 @@
  *
  * @package    ConsultingCoffee
  * @subpackage filter
- * @author     OUTTRABADY Lucky
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
+ * @author     Your name here
+ * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
  */
 abstract class BaseJobcategoryFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'titlejobcategory' => new sfWidgetFormFilterInput(),
+      'title' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'titlejobcategory' => new sfValidatorPass(array('required' => false)),
+      'title' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('jobcategory_filters[%s]');
@@ -37,8 +37,8 @@ abstract class BaseJobcategoryFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'idjobcategory'    => 'Number',
-      'titlejobcategory' => 'Text',
+      'id'    => 'Number',
+      'title' => 'Text',
     );
   }
 }

@@ -1,0 +1,45 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Cv
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: cv
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - user
+          - description
+          - datedisponibilite
+          - tarif
+          - isvisible
+          - isdisponible
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - isvisible
+          - isdisponible
+          - description
+          - datedisponibilite
+          - user
+          - tarif
+      form:
+        display:
+          NONE: [title, isvisible, isdisponible, user]
+          Description: [description]
+          Others: [datedisponibilite, tarif]
+        class: CvAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

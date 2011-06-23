@@ -5,29 +5,31 @@
  *
  * @package    ConsultingCoffee
  * @subpackage filter
- * @author     OUTTRABADY Lucky
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
+ * @author     Your name here
+ * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
  */
 abstract class BaseCvFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'iduser'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
-      'titrecv'             => new sfWidgetFormFilterInput(),
-      'descriptioncv'       => new sfWidgetFormFilterInput(),
-      'datedisponibilitecv' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
-      'tarifcv'             => new sfWidgetFormFilterInput(),
-      'estvisiblecv'        => new sfWidgetFormFilterInput(),
+      'title'             => new sfWidgetFormFilterInput(),
+      'description'       => new sfWidgetFormFilterInput(),
+      'datedisponibilite' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormInputText(array(), array("class" => "datepicker_me")), 'to_date' => new sfWidgetFormInputText(array(), array("class" => "datepicker_me")), 'with_empty' => true)),
+      'user'              => new sfWidgetFormDoctrineChoice(array('model' => 'DmUser', 'add_empty' => true)),
+      'tarif'             => new sfWidgetFormFilterInput(),
+      'isvisible'         => new sfWidgetFormChoice(array('choices' => array('' => dm::getI18n()->__('yes or no', array(), 'dm'), 1 => dm::getI18n()->__('yes', array(), 'dm'), 0 => dm::getI18n()->__('no', array(), 'dm')))),
+      'isdisponible'      => new sfWidgetFormChoice(array('choices' => array('' => dm::getI18n()->__('yes or no', array(), 'dm'), 1 => dm::getI18n()->__('yes', array(), 'dm'), 0 => dm::getI18n()->__('no', array(), 'dm')))),
     ));
 
     $this->setValidators(array(
-      'iduser'              => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'iduser')),
-      'titrecv'             => new sfValidatorPass(array('required' => false)),
-      'descriptioncv'       => new sfValidatorPass(array('required' => false)),
-      'datedisponibilitecv' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
-      'tarifcv'             => new sfValidatorPass(array('required' => false)),
-      'estvisiblecv'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'title'             => new sfValidatorPass(array('required' => false)),
+      'description'       => new sfValidatorPass(array('required' => false)),
+      'datedisponibilite' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
+      'user'              => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'id')),
+      'tarif'             => new sfValidatorPass(array('required' => false)),
+      'isvisible'         => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'isdisponible'      => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('cv_filters[%s]');
@@ -47,13 +49,14 @@ abstract class BaseCvFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id_cv'               => 'Number',
-      'iduser'              => 'ForeignKey',
-      'titrecv'             => 'Text',
-      'descriptioncv'       => 'Text',
-      'datedisponibilitecv' => 'Date',
-      'tarifcv'             => 'Text',
-      'estvisiblecv'        => 'Number',
+      'id'                => 'Number',
+      'title'             => 'Text',
+      'description'       => 'Text',
+      'datedisponibilite' => 'Date',
+      'user'              => 'ForeignKey',
+      'tarif'             => 'Text',
+      'isvisible'         => 'Boolean',
+      'isdisponible'      => 'Boolean',
     );
   }
 }

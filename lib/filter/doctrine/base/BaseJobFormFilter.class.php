@@ -5,31 +5,31 @@
  *
  * @package    ConsultingCoffee
  * @subpackage filter
- * @author     OUTTRABADY Lucky
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
+ * @author     Your name here
+ * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
  */
 abstract class BaseJobFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'idcountry'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Country'), 'add_empty' => true)),
-      'id_city'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('City'), 'add_empty' => true)),
-      'iduser'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
-      'idsubjobcategory' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Subjobcategory'), 'add_empty' => true)),
-      'jobname'          => new sfWidgetFormFilterInput(),
-      'descriptionjob'   => new sfWidgetFormFilterInput(),
-      'datedeadlinejob'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'title'          => new sfWidgetFormFilterInput(),
+      'description'    => new sfWidgetFormFilterInput(),
+      'city'           => new sfWidgetFormFilterInput(),
+      'dateperemption' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormInputText(array(), array("class" => "datepicker_me")), 'to_date' => new sfWidgetFormInputText(array(), array("class" => "datepicker_me")), 'with_empty' => true)),
+      'country'        => new sfWidgetFormDoctrineChoice(array('model' => 'Country', 'add_empty' => true)),
+      'author'         => new sfWidgetFormDoctrineChoice(array('model' => 'DmUser', 'add_empty' => true)),
+      'subjobcategory' => new sfWidgetFormDoctrineChoice(array('model' => 'Subjobcategory', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'idcountry'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Country'), 'column' => 'idcountry')),
-      'id_city'          => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('City'), 'column' => 'id_city')),
-      'iduser'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'iduser')),
-      'idsubjobcategory' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Subjobcategory'), 'column' => 'idsubjobcategory')),
-      'jobname'          => new sfValidatorPass(array('required' => false)),
-      'descriptionjob'   => new sfValidatorPass(array('required' => false)),
-      'datedeadlinejob'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
+      'title'          => new sfValidatorPass(array('required' => false)),
+      'description'    => new sfValidatorPass(array('required' => false)),
+      'city'           => new sfValidatorPass(array('required' => false)),
+      'dateperemption' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
+      'country'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Country'), 'column' => 'id')),
+      'author'         => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Author'), 'column' => 'id')),
+      'subjobcategory' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Subjobcategory'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('job_filters[%s]');
@@ -49,14 +49,14 @@ abstract class BaseJobFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'idjob'            => 'Number',
-      'idcountry'        => 'ForeignKey',
-      'id_city'          => 'ForeignKey',
-      'iduser'           => 'ForeignKey',
-      'idsubjobcategory' => 'ForeignKey',
-      'jobname'          => 'Text',
-      'descriptionjob'   => 'Text',
-      'datedeadlinejob'  => 'Date',
+      'id'             => 'Number',
+      'title'          => 'Text',
+      'description'    => 'Text',
+      'city'           => 'Text',
+      'dateperemption' => 'Date',
+      'country'        => 'ForeignKey',
+      'author'         => 'ForeignKey',
+      'subjobcategory' => 'ForeignKey',
     );
   }
 }

@@ -7,23 +7,23 @@
  *
  * @package    ConsultingCoffee
  * @subpackage form
- * @author     OUTTRABADY Lucky
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
+ * @author     Your name here
+ * @version    SVN: $Id$
  */
 abstract class BaseSubjobcategoryForm extends BaseFormDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'idsubjobcategory'    => new sfWidgetFormInputHidden(),
-      'idjobcategory'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Jobcategory'), 'add_empty' => false)),
-      'titlesubjobcategory' => new sfWidgetFormInputText(),
+      'id'          => new sfWidgetFormInputHidden(),
+      'title'       => new sfWidgetFormInputText(),
+      'jobcategory' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Jobcategory'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'idsubjobcategory'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idsubjobcategory')), 'empty_value' => $this->getObject()->get('idsubjobcategory'), 'required' => false)),
-      'idjobcategory'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Jobcategory'))),
-      'titlesubjobcategory' => new sfValidatorString(array('max_length' => 150, 'required' => false)),
+      'id'          => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
+      'title'       => new sfValidatorString(array('max_length' => 100)),
+      'jobcategory' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Jobcategory'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('subjobcategory[%s]');
@@ -33,6 +33,27 @@ abstract class BaseSubjobcategoryForm extends BaseFormDoctrine
     $this->setupInheritance();
 
     parent::setup();
+    
+    // Unset automatic fields like 'created_at', 'updated_at', 'position'
+    // override this method in your form to keep them
+    parent::unsetAutoFields();
+  }
+
+
+  protected function doBind(array $values)
+  {
+    parent::doBind($values);
+  }
+  
+  public function processValues($values)
+  {
+    $values = parent::processValues($values);
+    return $values;
+  }
+  
+  protected function doUpdateObject($values)
+  {
+    parent::doUpdateObject($values);
   }
 
   public function getModelName()

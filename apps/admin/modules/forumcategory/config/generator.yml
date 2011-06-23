@@ -1,0 +1,41 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Forumcategory
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: forumcategory
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - strippedname
+          - description
+          - rank
+          - created_at
+        sort:
+          - created_at
+          - desc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - strippedname
+          - description
+          - rank
+          - created_at
+      form:
+        display:
+          NONE: [title]
+          Description: [description]
+          Others: [strippedname, rank]
+        class: ForumcategoryAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

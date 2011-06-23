@@ -1,0 +1,1 @@
+php lib/vendor/diem/install

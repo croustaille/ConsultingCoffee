@@ -1,0 +1,31 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Country
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: country
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+      form:
+        display:
+          NONE: [title]
+        class: CountryAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

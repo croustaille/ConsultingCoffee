@@ -1,0 +1,35 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Subjobcategory
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: subjobcategory
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - jobcategory
+          - job_list
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - jobcategory
+      form:
+        display:
+          NONE: [title, jobcategory]
+          Jobs: [job_list]
+        class: SubjobcategoryAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

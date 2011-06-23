@@ -1,0 +1,17 @@
+default:
+  
+  http_metas:
+    content-type: text/html
+
+  stylesheets:
+    - layout
+    - typography
+    - navigation
+    - markdown
+    - form
+    - article
+    - search 
+  javascripts:
+
+  has_layout:     true
+  layout:         layout

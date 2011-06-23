@@ -1,0 +1,51 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Forum
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: forum
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - description
+          - rank
+          - category
+          - created_at
+          - updated_at
+          - stripped_name
+          - latest_post
+          - nb_posts
+          - nb_topics
+        sort:
+          - created_at
+          - desc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - description
+          - rank
+          - category
+          - created_at
+          - updated_at
+          - stripped_name
+          - latest_post
+          - nb_posts
+          - nb_topics
+      form:
+        display:
+          NONE: [title]
+          Description: [description]
+          Others: [rank, category, stripped_name, latest_post, nb_posts, nb_topics]
+        class: ForumAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
